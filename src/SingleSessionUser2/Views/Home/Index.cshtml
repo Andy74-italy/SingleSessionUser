@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model SingleSessionUser2.Models.HomeModel
+
+<form method="post">
+    <table>
+        <tr>
+            <td>SessionID</td>
+            <td>@Model.SessionID</td>
+        </tr>
+        <tr>
+            <td>User</td>
+            <td>@(Model.User??"No user logged")</td>
+        </tr>
+        <tr>
+            <td>RANDOM Value in session</td>
+            <td>@Model.Rnd_Value_Session</td>
+        </tr>
+        <tr>
+            <td>RANDOM Value in cache</td>
+            <td>@(Model.Rnd_Value_Cookie)</td>
+        </tr>
+        <tr>
+            <td>
+                Access to the system
+            </td>
+            <td>
+                @if (string.IsNullOrEmpty((string)Session["User"]))
+                {
+                    <input type="text" name="txtUsername" placeholder="Insert here your username" value="" />
+                    <input type="submit" value="Login" />
+                }
+                else
+                {
+                    <input type="text" name="txtUsername" placeholder="Insert here your username" value="@Model.User" readonly="readonly" />
+                    <input type="submit" value="Logout" />
+                }
+            </td>
+        </tr>
+    </table>
+</form>
