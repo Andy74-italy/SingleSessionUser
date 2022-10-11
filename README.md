@@ -24,3 +24,7 @@ To complete the process, just check the session value with that of the cookie fo
 ## DEMO
 
 ![name](images_and_videos/DEMO.gif)
+
+## Consideration
+
+Changing the SessionID making it static by user, is NOT to be considered a best practice, for reasons of IT security; it cannot be considered a real vulnerability, but it is certainly a weakness for a possible attack. The best alternative will be shortly reported in this same repository in an alternative branch. The solution involves the use of a dictionary with a key-value pair where the key is the logged in user and the value its relative SessionID. The dictionary is saved in the application session and at the moment of access, the existence of an already active connection is checked; in this case the behavior just described is exploited to overwrite and assign the existing session to the new logged in user and disconnect the old one with the same methodology. But the process will be better described in the branch specific README document.
