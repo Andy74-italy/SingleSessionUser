@@ -23,6 +23,8 @@ To complete the process, just check the session value with that of the cookie fo
 
 ## DEMO
 
+The word "cache" is a typo, it should be "cookie".
+
 ![name](images_and_videos/DEMO.gif)
 
 ## Consideration
